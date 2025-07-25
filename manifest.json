@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Bulk WR2 Access Permission",
+  "version": "1.0",
+  "description": "",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "disallow.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["allow.js"]
+    }
+  ]
+}
